@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 export default function Settings() {
     return(
         <div className="p-5">
-            <h1 className="text-4xl font-bold mb-5">Settings</h1>
+            <h1 className="text-3xl font-bold mb-5">Settings</h1>
             <Tabs defaultValue="account" className="w-[400px]">
                 <TabsList>
                     <TabsTrigger value="account" className="tracking-wider">Account</TabsTrigger>
