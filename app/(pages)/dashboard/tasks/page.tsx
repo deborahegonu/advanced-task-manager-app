@@ -1,26 +1,20 @@
-import { ProfileForm } from "@/blocks/form/ProfileForm"
-import { ModeToggle } from "@/components/theme/toggle-theme"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { fetchTasks } from "@/actions/fetch-tasks"
 
+import { columns } from "./columns"
+import { DataTable } from "./data-table"
+import { AddTask } from "@/blocks/form/AddTask"
+ 
 
-export default function Tasks() {
+export default async function Tasks() {
+    const data =  await fetchTasks()
+
     return(
-        <div className="p-5">
-            <h1 className="text-xl font-bold mb-5">Tasks</h1>
-            <Tabs defaultValue="account" className="w-[400px]">
-                <TabsList>
-                    <TabsTrigger value="account" className="tracking-wider">Account</TabsTrigger>
-                    <TabsTrigger value="appearance" className="tracking-wider">Appearance</TabsTrigger>
-                </TabsList>
-                <TabsContent value="account">
-                    <ProfileForm />
-                </TabsContent>
-                <TabsContent value="appearance">
-                    <div>
-                        <ModeToggle />
-                    </div>
-                </TabsContent>
-            </Tabs>
-        </div>
+        <section className="w-full p-5">
+            <div className="flex items-center justify-between mb-5">
+                <h1 className="text-xl font-bold">Tasks</h1>
+                <AddTask />
+            </div>
+            {data !== null ? <DataTable columns={columns} data={data} /> : <p>No tasks found.</p>} 
+        </section>
     )
 }

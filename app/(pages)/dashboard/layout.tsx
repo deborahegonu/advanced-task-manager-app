@@ -16,7 +16,7 @@ export default function Layout( { children } : LayoutProps ) {
                     return <SidebarItem key={index} title={item.title} icon={item.icon} url={item.url} />
                 })}
             </Sidebar>
-            <main className="md:ml-36 lg:w-5/6 lg:ml-[250px] mt-14 mb-20">
+            <main className="w-full md:ml-36 lg:w-5/6 lg:ml-[250px] mt-14 mb-20">
                 {children}
             </main>
             <MobileMenu>

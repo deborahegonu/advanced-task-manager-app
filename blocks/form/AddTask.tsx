@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -12,7 +11,7 @@ import {
 
   
 import { IoAdd,  } from "react-icons/io5";
-import { NewTaskForm } from "./task/new-task"
+import { NewTaskForm } from "./task/NewTaskForm"
 
 export function AddTask() {
   return (
@@ -20,12 +19,12 @@ export function AddTask() {
       <SheetTrigger asChild>
         <Button className="text-xs">
             <IoAdd />
-            Add New Task
+            Create Task
         </Button>
       </SheetTrigger>
       <SheetContent className="border-l-accent">
         <SheetHeader>
-          <SheetTitle>New Task</SheetTitle>
+          <SheetTitle>Create Task</SheetTitle>
           <SheetDescription>
             Make changes to your profile here. Click save when youre done.
           </SheetDescription>
