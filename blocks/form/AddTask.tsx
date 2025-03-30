@@ -31,11 +31,11 @@ export function AddTask() {
           </SheetDescription>
         </SheetHeader>
             <NewTaskForm />
-        <SheetFooter>
+        {/* <SheetFooter>
           <SheetClose asChild>
             <Button type="submit">Create Task</Button>
           </SheetClose>
-        </SheetFooter>
+        </SheetFooter> */}
       </SheetContent>
     </Sheet>
   )

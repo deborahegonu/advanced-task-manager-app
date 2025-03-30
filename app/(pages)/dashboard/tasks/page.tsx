@@ -3,10 +3,10 @@ import { ModeToggle } from "@/components/theme/toggle-theme"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
-export default function Settings() {
+export default function Tasks() {
     return(
         <div className="p-5">
-            <h1 className="text-xl font-bold mb-5">Settings</h1>
+            <h1 className="text-xl font-bold mb-5">Tasks</h1>
             <Tabs defaultValue="account" className="w-[400px]">
                 <TabsList>
                     <TabsTrigger value="account" className="tracking-wider">Account</TabsTrigger>

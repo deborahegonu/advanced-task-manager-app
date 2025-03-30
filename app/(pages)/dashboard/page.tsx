@@ -27,7 +27,8 @@ const ListItem = ({ title } : ListTitleProps) => {
 export default function Dashboard() {
     return(
         <section className="p-5">
-            <div className="grid grid-cols-3 gap-5">
+            <h1 className="text-xl font-bold mb-5">Hi, Debs</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div>
                     <ListItem title="to do" />
                     <div className="bg-accent/60 border border-accent text-sm p-3 rounded">
@@ -55,21 +56,13 @@ export default function Dashboard() {
                             <div className="flex items-center space-x-2 group">
                                 <span className="text-xs capitalize text-stone-500">Task complete</span>
                                 <Switch />
-                            </div>
-                            
+                            </div> 
                         </TaskFooter>
                     </Task>
-                    
-               
                 </div>
-                
-            
-            <div>
-                <ListItem title="Completed" />
-            </div>
-            
-            
-
+                <div>
+                    <ListItem title="Completed" />
+                </div>
             </div>
         </section>
     )
