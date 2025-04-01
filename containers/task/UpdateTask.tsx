@@ -1,8 +1,10 @@
 import { HiOutlinePencil } from "react-icons/hi2";
-
-
-
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -20,10 +22,18 @@ export function UpdateTask({ id, description, category, status, priority, dueDat
   return (
     <Sheet>
       <SheetTrigger asChild>
-            <Button variant={'ghost'} className="text-stone-500">
-                <HiOutlinePencil />
-                Edit
-            </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <Button variant={'ghost'} className="text-stone-500">
+                  <HiOutlinePencil />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Edit task</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </SheetTrigger>
       <SheetContent className="border-l-accent">
         <SheetHeader>

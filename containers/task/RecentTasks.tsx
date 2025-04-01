@@ -10,7 +10,7 @@ export const RecentTasks = async () => {
 
   return (
     <Widget title="Recent">
-      {tasks ? (tasks?.map((item) => (
+      {tasks ? tasks?.map((item) => (
         <Task
           key={item.id}
           id={item.id}
@@ -20,7 +20,7 @@ export const RecentTasks = async () => {
           priority={item.priority}
           status={item.status}
         />
-      )) ? <div className="flex justify-center"><RiLoader4Fill className="animate-spin w-8 h-8" /></div> : <p>No tasks found</p>) : null}
+      )) : <div className="flex justify-center"><RiLoader4Fill className="animate-spin w-8 h-8" /></div> }
     </Widget>
   )
 }

@@ -12,6 +12,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { toast } from "sonner"
 import { HiOutlineTrash } from "react-icons/hi2"
 import { useState } from "react"
@@ -36,9 +42,19 @@ export function DeleteTask({id}: {id: string}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button variant={'ghost'} size={'icon'} className="text-stone-500 hover:text-red-600">
-            <HiOutlineTrash size={'20'} />
-        </Button>
+        <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                    <Button variant={'ghost'} size={'icon'} className="text-stone-500 hover:text-red-600">
+                        <HiOutlineTrash size={'20'} />
+                    </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Delete task</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+      
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
