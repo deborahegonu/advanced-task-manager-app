@@ -109,9 +109,9 @@ export function DataTable<TData, TValue>({
         </DropdownMenu>
       </div>
       <Table>
-        <TableHeader className="dark:border-b-stone-700">
+        <TableHeader >
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id}>
+            <TableRow className="border-b-accent"  key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id}>

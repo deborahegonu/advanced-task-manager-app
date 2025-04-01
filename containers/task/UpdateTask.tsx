@@ -1,10 +1,4 @@
 import { HiOutlinePencil } from "react-icons/hi2";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -22,18 +16,9 @@ export function UpdateTask({ id, description, category, status, priority, dueDat
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button variant={'ghost'} className="text-stone-500">
-                  <HiOutlinePencil />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Edit task</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <Button variant={'ghost'} className="text-stone-500">
+            <HiOutlinePencil />
+        </Button>
       </SheetTrigger>
       <SheetContent className="border-l-accent">
         <SheetHeader>
@@ -42,12 +27,7 @@ export function UpdateTask({ id, description, category, status, priority, dueDat
             Make changes to your task here. Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader>
-            <UpdateTaskForm id={id} description={description} priority={priority} status={status} category={category} dueDate={dueDate}  />
-        {/* <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Create Task</Button>
-          </SheetClose>
-        </SheetFooter> */}
+        <UpdateTaskForm id={id} description={description} priority={priority} status={status} category={category} dueDate={dueDate}  />
       </SheetContent>
     </Sheet>
   )
