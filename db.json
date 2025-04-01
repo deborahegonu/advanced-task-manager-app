@@ -4,6 +4,11 @@
       "id": "988b85cd33b056834463c53008a8e3d089d6db91",
       "email": "debs@demo.com",
       "password": "$2b$10$CA/JXy3eBiCOTIp3d0wvk.KxPVHZIunk1jdUx9hSaXkACBwFnPvTu"
+    },
+    {
+      "id": "8ff9f3391dcfaf0db7b4168c9f970bbcc98bb718",
+      "email": "debthebuilderx@gmail.com",
+      "password": "$2b$10$GzjJglv7Glxl6m5y9FUHaekE1IIc9MwnegPWtWQeMboguRsoe1S.S"
     }
   ],
   "tasks": [

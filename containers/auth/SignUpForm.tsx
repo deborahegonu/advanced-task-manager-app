@@ -47,7 +47,7 @@ export function SignUpForm() {
             toast.error(err)
         }).finally(() => {
             setLoading(false);
-            router.refresh();
+            router.push('/');
         })
         
     }

@@ -11,7 +11,7 @@ export const LogoutButton = () => {
     const Logout = () => {
         LogoutUser();
         setUserData(null);
-        router.replace("/login")
+        router.replace("/")
     }
 
     return (
