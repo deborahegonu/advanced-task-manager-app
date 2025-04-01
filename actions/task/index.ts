@@ -74,13 +74,13 @@ export const deteleTask = async (data: z.infer<typeof DeleteTaskFormSchema>) => 
 
 export async function getLatestTasks(): Promise<Task[] | null> {
     try {
-        const res = await fetch(`${API_URL}/tasks?_sort=createdAt&_order=desc&_limit=3`);
+        const res = await fetch(`${API_URL}/tasks?_sort=createdAt&_order=desc&_limit=10`);
         if (!res.ok) {
             throw new Error('Failed to fetch tasks')
         }
         return res.json()    
-    } catch(error) {
-        console.log(error)
+    } catch{
+        
         return null
     }
 }
@@ -92,8 +92,7 @@ export async function getAllTasks(): Promise<Task[] | null> {
             throw new Error('Failed to fetch tasks')
         }
         return res.json()    
-    } catch(error) {
-        console.log(error)
+    } catch {
         return null
     }
 }

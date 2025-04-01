@@ -1,48 +1,22 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@example.com"
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith",
-      "email": "jane@example.com"
-    },
-    {
-      "id": "c7467275b238ab137c23a376696f8f00c74f3eb5",
-      "email": "debthebuilderx@gmail.com",
-      "password": "$2b$10$mvY4XFx6y1SHHJS19ExZ6e9IXKI8Yun4f/Q93fPwe1Dv3Rv3uPS.m"
-    },
-    {
-      "id": "923fbe743e27e028dedc53554ce4a6cd060a933d",
-      "email": "santamichello@gmail.com",
-      "password": "$2b$10$9taw0KSZZGaHNjYLJR7pEe2rqlfWHOwbXngwXtBU7SkXlXOEQ652a"
+      "id": "988b85cd33b056834463c53008a8e3d089d6db91",
+      "email": "debs@demo.com",
+      "password": "$2b$10$CA/JXy3eBiCOTIp3d0wvk.KxPVHZIunk1jdUx9hSaXkACBwFnPvTu"
     }
   ],
   "tasks": [
     {
-      "id": "0729bdb5d474614a6602c901ceeffc482ef6e0e8",
-      "userId": "923fbe743e27e028dedc53554ce4a6cd060a933d",
+      "id": "bd395d51a5431ecd83cec97cf15359ba96713151",
+      "userId": "988b85cd33b056834463c53008a8e3d089d6db91",
       "description": "Complete advanced task manager",
       "priority": "high",
       "category": "urgent",
       "dueDate": "2025-04-01",
-      "status": "Completed",
-      "createdAt": "2025-03-31T16:43:59.015Z",
-      "updatedAt": "2025-04-01T10:28:39.143Z"
-    },
-    {
-      "id": "d6d9563ca7cd608540224ef6216decec73561191",
-      "userId": "923fbe743e27e028dedc53554ce4a6cd060a933d",
-      "description": "Bake a birthday cake for mummy in 65 days",
-      "priority": "medium",
-      "category": "personal",
-      "dueDate": "2025-05-03",
-      "status": "In Progress",
-      "createdAt": "2025-04-01T10:56:17.007Z",
-      "updatedAt": "2025-04-01T10:59:52.444Z"
+      "status": "completed",
+      "createdAt": "2025-04-01T12:37:10.752Z",
+      "updatedAt": "2025-04-01T12:38:12.660Z"
     }
   ]
 }

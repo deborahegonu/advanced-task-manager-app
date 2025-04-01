@@ -44,7 +44,6 @@ export const CreateUser = async (data: z.infer<typeof SignUpFormSchema>) => {
       return 'User created successfully!';
       
     } catch (error) {
-      console.error(error);
       return error;
     }
   };
@@ -74,10 +73,6 @@ export const CreateUser = async (data: z.infer<typeof SignUpFormSchema>) => {
       cookieStore.set('token', genAccessToken, { secure: true });
       cookieStore.set('user', JSON.stringify(rest));
   
-      // const fetchTasks = await fetch(`${API_URL}/tasks?userId=${rest.id}`);
-      // const tasksJson = await fetchTasks.json();
-      // const result = { ...rest };
-  
       return {
         status: 200,
         message: "User Logged in successfully",
@@ -85,8 +80,7 @@ export const CreateUser = async (data: z.infer<typeof SignUpFormSchema>) => {
         data: rest
       };
   
-    } catch (error) {
-      console.error(error);
+    } catch {
       return { status: 500, message: "An error occurred while logging in." };
     }
   };

@@ -19,7 +19,7 @@ export function Task({ id, description, category, status, priority, dueDate }: T
       const [statusCheck, setStatusCheck] = useState<string>(status);
       const UpdateItem = (checked: boolean) => {
           setLoading(true);
-          const currentStatus = checked ? "Completed" : "In Progress";
+          const currentStatus = checked ? "completed" : "in-progress";
           const payload = {id, status: currentStatus};
           updateTask(payload)
           .then((res) => {
@@ -35,7 +35,7 @@ export function Task({ id, description, category, status, priority, dueDate }: T
           })
       }
   return (
-    <div className={"group border border-accent rounded bg-white dark:bg-accent/60 py-1 flex flex-col"} id={id}>
+    <div className={"group hover:shadow-sm border border-accent rounded bg-white dark:bg-accent/60 py-1 flex flex-col"} id={id}>
         <div className="flex items-center justify-between py-2 px-3">
           <div className="flex items-center space-x-2">
             <Tag tag={priority} />
@@ -48,7 +48,7 @@ export function Task({ id, description, category, status, priority, dueDate }: T
         <div className="flex justify-between items-center px-3 py-2">
         <div className="flex items-center space-x-2 group">
             <span className="text-xs capitalize text-stone-500">Task complete</span>
-            {loading ? <> <RiLoader4Fill className="animate-spin" /></> : <Switch checked={statusCheck === 'Completed' ? true : false } onCheckedChange={UpdateItem} />}
+            {loading ? <> <RiLoader4Fill className="animate-spin" /></> : <Switch checked={statusCheck === 'completed' ? true : false } onCheckedChange={UpdateItem} />}
           </div>
         <div className="flex items-center space-x-1">
             <UpdateTask id={id} description={description} priority={priority} status={status} category={category} dueDate={dueDate} />

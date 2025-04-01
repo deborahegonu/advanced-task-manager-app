@@ -54,7 +54,7 @@ export function SignUpForm() {
 
   return (
     <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-6 p-5">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col space-y-6 p-5 bg-white dark:bg-accent/60 shadow-sm rounded">
         <FormField
             control={form.control}
             name="email"

@@ -126,8 +126,8 @@ export function UpdateTaskForm({ id, description, category, status, priority, du
                             </FormControl>
                             <FormMessage />
                         </FormItem>
-                        )}
-            />
+            )}
+        />
         </div>
     
         <FormField
@@ -141,6 +141,30 @@ export function UpdateTaskForm({ id, description, category, status, priority, du
                 </FormControl>
                 <FormMessage />
             </FormItem>
+            )}
+        />
+         <FormField
+            control={form.control}
+            name="status"
+            render={({ field }) => (
+            <FormItem>
+                <FormLabel>Status</FormLabel>
+                <FormControl>
+                
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select task status" />
+                    </SelectTrigger>
+                    <SelectContent >    
+                        
+                        <SelectItem value="completed">Completed</SelectItem>
+                        <SelectItem value="in-progress">In-progress</SelectItem>
+                        <SelectItem value="to do">To Do</SelectItem>
+                    </SelectContent>
+                </Select>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
             )}
         />
     

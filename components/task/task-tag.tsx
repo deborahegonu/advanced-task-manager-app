@@ -12,8 +12,18 @@ const styleTag = ( tag : string) => {
             return 'bg-amber-500/10 px-2 text-amber-500'
         case 'high':
             return 'bg-red-500/10 px-2 text-red-500'
-        case 'Completed':
+        case 'in-progress':
+            return 'bg-yellow-500/10 px-2 text-yellow-500'
+        case 'to do':
+            return 'bg-slate-500/10 px-2 text-slate-500'
+        case 'completed':
             return 'bg-green-500/10 px-2 text-green-500'
+        case 'work':
+            return 'bg-blue-500/10 px-2 text-blue-500'
+        case 'personal':
+            return 'bg-purple-500/10 px-2 text-purple-500'
+        case 'urgent':
+            return 'bg-red-500/10 px-2 text-red-500'
     }
 }
 
