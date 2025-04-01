@@ -1,20 +1,16 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+"use server";
 
-const auth = getAuth();
+import { cookies } from "next/headers";
 
-export const signup = async (email: string, password: string) => {
-    createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log(user)
-    return user
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-    console.log(errorCode, errorMessage)
-    return error
-  });
+export const IsUserLoggedIn = async () => {
+  const cookieStore = await cookies();
+  const userCookie = cookieStore.get('user')?.value;  
+  const user = userCookie ? JSON.parse(userCookie) : null; 
+  return user;
+}
+
+export const LogoutUser = async () => {
+  (await cookies()).set('user', '');
+  (await cookies()).set('token', '');
+  return true;
 }

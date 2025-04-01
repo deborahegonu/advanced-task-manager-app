@@ -9,17 +9,17 @@ export const sidebarMenu: SidebarItem[] = [
         title: 'dashboard'
     },
     {
-        url: '/dashboard/tasks',
+        url: '/tasks',
         icon: <RiTaskLine size={'20'} />,
         title: 'tasks'
     },
     {
-        url: '/dashboard/categories',
+        url: '/categories',
         icon: <TbCategory2 size={'20'} />,
         title: 'categories'
     },
     {
-        url: '/dashboard/settings',
+        url: '/settings',
         icon: <RiSettings3Line size={'20'} />,
         title: 'settings'
     },

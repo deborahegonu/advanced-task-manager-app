@@ -15,7 +15,10 @@ import {
 export function ModeToggle() {
   const { theme, setTheme } = useTheme()
 
-  console.log('theme:', theme)
+  const changeThemeMode = (mode: string) => {
+    console.log(mode, theme);
+    setTheme(mode)
+  }
 
   return (
     <DropdownMenu>
@@ -27,13 +30,13 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem onClick={() => changeThemeMode("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem onClick={() => changeThemeMode("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => changeThemeMode("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -1,5 +1,5 @@
 import { IoArrowUpCircleOutline,   } from "react-icons/io5";
-import { LuCircleCheck, LuCircle, LuArrowDownToLine, LuArrowUpToLine, LuArrowRightToLine } from "react-icons/lu";
+import {  LuCircle, } from "react-icons/lu";
 
 import { cn } from "@/lib/utils";
 
@@ -12,27 +12,27 @@ interface TagProps {
 const styleTag = ( tag : string) => {
     switch(tag) {
         case 'low':
-            return <LuArrowDownToLine />
+            
+            return 'bg-neutral-500/10 px-2 text-neutral-500'
         case 'medium':
-            return <LuArrowRightToLine />
+            return 'bg-amber-500/10 px-2 text-amber-500'
         case 'high':
-            return <LuArrowUpToLine />
-        case 'todo':
+            return 'bg-red-500/10 px-2 text-red-500'
+        case 'to do':
             return <LuCircle />
         case 'in-progress':
             return <IoArrowUpCircleOutline size={'16'} />
-        case 'completed':
-            return <LuCircleCheck />
+        case 'Completed':
+            return 'bg-green-500/10 px-2 text-green-500'
     }
 }
 
 export const Tag = ({ tag } : TagProps) => {
    
     return(
-        <div className={cn("flex items-center space-x-2 py-2 rounded tracking-wider", styleTag(tag))}>
-            {styleTag(tag)}
-            <span className="capitalize text-xs font-semibold">{tag}</span>
-        </div>
+        <span className={cn("py-1.5 rounded tracking-wider capitalize text-xs font-semibold", styleTag(tag))}>
+            {tag}
+        </span>
     )
     
 }
