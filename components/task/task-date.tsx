@@ -6,20 +6,23 @@ interface TaskDueDateProps {
 }
 
 const getDueDate = ( date: string) => {
-    const originalDate = moment(date, 'DD-MM-YYYY');
-    const today = moment(new Date(), 'DD-MM-YYYY');
-    const overdue = originalDate.from(today);
+    let dueDate = '';
+    const today = moment();
+    
 
-    const dateB = moment('2014-11-11');
-const dateC = moment('2014-10-11');
+    if(moment(date).isSameOrAfter(today)) {
+        
+        dueDate = moment(date, 'YYYY.MM.DD').fromNow(true);
+        return dueDate;
+    } 
 
-console.log('Difference is ', dateB.diff(dateC), 'milliseconds');
-console.log('Difference is ', dateB.diff(dateC, 'days'), 'days');
-console.log('Difference is ', dateB.diff(dateC, 'months'), 'months');
-
-    console.log(originalDate, today, overdue);
-    return overdue;
+    if(moment(date).isBefore(today)) {
+    
+        dueDate = moment(date, 'YYYY.MM.DD').fromNow();
+        return dueDate;
+    } 
 }
+
 export const TaskDueDate = ({ date }: TaskDueDateProps) => {
     return(
         <div className="text-xs flex items-center space-x-1 capitalize font-semibold bg-blue-500/10 px-2 py-1.5 text-blue-500 rounded">
