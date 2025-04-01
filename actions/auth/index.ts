@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from "@/constants";
 import { cookies } from "next/headers";
 
-const API_URL = 'http://localhost:4000';
+const API_URL = 'https://advanced-task-manager-app.vercel.app';
 
 export const CreateUser = async (data: z.infer<typeof SignUpFormSchema>): Promise<string> => {
   try {
