@@ -15,7 +15,6 @@ export const createTask = async (data: z.infer<typeof TaskFormSchema>) => {
     
     await Middleware(token);
 
-    console.log(data)
     data.createdAt = new Date().toISOString();
     const res = await fetch(`${API_URL}/tasks`, {
         method: 'POST',
@@ -43,7 +42,6 @@ export const updateTask = async (data: z.infer<typeof UpdateTaskFormSchema>) => 
         body: JSON.stringify(data),
     });
 
-    console.log(res)
     if (res.ok) {
         return 'Task updated successfully!'
     } else {
@@ -72,9 +70,9 @@ export const deteleTask = async (data: z.infer<typeof DeleteTaskFormSchema>) => 
     
 }
 
-export async function getLatestTasks(): Promise<Task[] | null> {
+export async function getLatestTasks(data: z.infer<typeof DeleteTaskFormSchema>): Promise<Task[] | null> {
     try {
-        const res = await fetch(`${API_URL}/tasks?_sort=createdAt&_order=desc&_limit=10`);
+        const res = await fetch(`${API_URL}/tasks?userId=${data.id}&_sort=createdAt&_order=desc&_limit=10`);
         if (!res.ok) {
             throw new Error('Failed to fetch tasks')
         }
@@ -85,9 +83,9 @@ export async function getLatestTasks(): Promise<Task[] | null> {
     }
 }
 
-export async function getAllTasks(): Promise<Task[] | null> {
+export async function getAllTasks(data: z.infer<typeof DeleteTaskFormSchema>): Promise<Task[] | null> {
     try {
-        const res = await fetch(`${API_URL}/tasks`);
+        const res = await fetch(`${API_URL}/tasks?userId=${data.id}&_sort=createdAt&_order=desc`);
         if (!res.ok) {
             throw new Error('Failed to fetch tasks')
         }

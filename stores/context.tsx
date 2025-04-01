@@ -1,7 +1,7 @@
 
 "use client";
 
-import { IsUserLoggedIn } from "@/lib/auth";
+import { GetUserCookieData } from "@/lib/auth";
 import { UserType } from "@/types";
 import React, {
   createContext,
@@ -32,7 +32,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const getCookie = async () => {
-      const userData = await IsUserLoggedIn();
+      const userData = await GetUserCookieData();
       setUser(userData);
     };
     getCookie();

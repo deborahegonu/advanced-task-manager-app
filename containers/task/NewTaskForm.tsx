@@ -57,7 +57,6 @@ export function NewTaskForm() {
        
     function onSubmit(values: z.infer<typeof TaskFormSchema>) {
         setLoading(true)
-        console.log(values)
         createTask(values)
         .then((res) => {
             setLoading(false);

@@ -22,3 +22,13 @@ export interface UserType {
     password?: string;
     tasks?:Task[]
 }
+
+export interface SortType {
+    id?: string;
+    accessorKey?: string;
+    header?: (({ table }: { table: any }) => React.JSX.Element) | string | (({ column }: { column: any }) => React.JSX.Element);
+    cell?: ({ row }: { row: any }) => React.JSX.Element;
+    enableSorting?: boolean;
+    enableHiding?: boolean;
+  }
+  

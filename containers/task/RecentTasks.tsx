@@ -4,9 +4,11 @@ import { getLatestTasks } from "@/actions/task"
 import { Widget } from "@/components/widget"
 import { Task } from "@/components/task"
 import { RiLoader4Fill } from "react-icons/ri";
+import { GetUserCookieData } from "@/lib/auth";
 
 export const RecentTasks = async () => {
-  const tasks =  await getLatestTasks();
+  const user = await GetUserCookieData();
+  const tasks =  await getLatestTasks({id: user?.id});
 
   return (
     <Widget title="Recent">

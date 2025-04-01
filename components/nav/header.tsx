@@ -11,7 +11,7 @@ export const Header = () => {
     const { user } = useUser();
 
     return (
-        <header className="px-5 py-3 bg-stone-50 dark:bg-black border-b border-b-accent fixed top-0 h-14 left-0 right-0">
+        <header className="px-5 py-3 bg-stone-50 dark:bg-black border-b border-b-accent fixed top-0 h-14 left-0 right-0 z-50">
             <nav className="flex items-center justify-between">
                 <Logo url="/dashboard" />
                 <div className="flex space-x-4">

@@ -37,20 +37,23 @@ export function SignUpForm() {
     })
        
     function onSubmit(values: z.infer<typeof SignUpFormSchema>) {
-        setLoading(true)
+        setLoading(true);
+        
         CreateUser(values)
-        .then((res) => {
+          .then((res: string) => {
             setLoading(false);
-            toast.success(res)
-        }).catch((err) => {
+            toast.success(res);
+          })
+          .catch((err) => {
             setLoading(false);
-            toast.error(err)
-        }).finally(() => {
+            toast.error(err instanceof Error ? err.message : 'An error occurred');
+          })
+          .finally(() => {
             setLoading(false);
             router.push('/');
-        })
-        
-    }
+          });
+      }
+      
 
   return (
     <Form {...form}>

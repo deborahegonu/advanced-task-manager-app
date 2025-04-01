@@ -2,7 +2,7 @@
 
 import { cookies } from "next/headers";
 
-export const IsUserLoggedIn = async () => {
+export const GetUserCookieData = async () => {
   const cookieStore = await cookies();
   const userCookie = cookieStore.get('user')?.value;  
   const user = userCookie ? JSON.parse(userCookie) : null; 

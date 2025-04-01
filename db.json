@@ -9,19 +9,24 @@
       "id": "8ff9f3391dcfaf0db7b4168c9f970bbcc98bb718",
       "email": "debthebuilderx@gmail.com",
       "password": "$2b$10$GzjJglv7Glxl6m5y9FUHaekE1IIc9MwnegPWtWQeMboguRsoe1S.S"
+    },
+    {
+      "id": "01e3bb46dd56dc3fce24178de47452ad1e7ab50f",
+      "email": "santamichello@gmail.com",
+      "password": "$2b$10$WX8wcxL6awlbOlHkWnI97eksZyQN7Aub9YFkVK19tM9k0Zj4A6SNu"
     }
   ],
   "tasks": [
     {
-      "id": "bd395d51a5431ecd83cec97cf15359ba96713151",
-      "userId": "988b85cd33b056834463c53008a8e3d089d6db91",
+      "id": "b566888c08689ed72dc4abf434b546e955696678",
+      "userId": "8ff9f3391dcfaf0db7b4168c9f970bbcc98bb718",
       "description": "Complete advanced task manager",
       "priority": "high",
-      "category": "urgent",
-      "dueDate": "2025-04-01",
-      "status": "completed",
-      "createdAt": "2025-04-01T12:37:10.752Z",
-      "updatedAt": "2025-04-01T12:38:12.660Z"
+      "category": "work",
+      "dueDate": "2025-05-01",
+      "status": "to do",
+      "createdAt": "2025-04-01T14:33:12.987Z",
+      "updatedAt": ""
     }
   ]
 }
