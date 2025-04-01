@@ -1,5 +1,4 @@
 import { RiHome5Line, RiTaskLine, RiSettings3Line  } from "react-icons/ri";
-import { TbCategory2 } from "react-icons/tb";
 import { SidebarItem } from "@/types"
 
 export const sidebarMenu: SidebarItem[] = [
@@ -12,11 +11,6 @@ export const sidebarMenu: SidebarItem[] = [
         url: '/tasks',
         icon: <RiTaskLine size={'20'} />,
         title: 'tasks'
-    },
-    {
-        url: '/categories',
-        icon: <TbCategory2 size={'20'} />,
-        title: 'categories'
     },
     {
         url: '/settings',

@@ -74,15 +74,15 @@ export const CreateUser = async (data: z.infer<typeof SignUpFormSchema>) => {
       cookieStore.set('token', genAccessToken, { secure: true });
       cookieStore.set('user', JSON.stringify(rest));
   
-      const fetchTasks = await fetch(`${API_URL}/tasks?userId=${rest.id}`);
-      const tasksJson = await fetchTasks.json();
-      const result = { ...rest, tasks: tasksJson };
+      // const fetchTasks = await fetch(`${API_URL}/tasks?userId=${rest.id}`);
+      // const tasksJson = await fetchTasks.json();
+      // const result = { ...rest };
   
       return {
         status: 200,
         message: "User Logged in successfully",
         token: genAccessToken,
-        data: result
+        data: rest
       };
   
     } catch (error) {

@@ -1,35 +1,54 @@
-"use client"
 
-import { UserType } from '@/types';
-import React, { createContext, useState, ReactNode, useContext } from 'react'
+"use client";
+
+import { IsUserLoggedIn } from "@/lib/auth";
+import { UserType } from "@/types";
+import React, {
+  createContext,
+  useState,
+  ReactNode,
+  useContext,
+  useEffect,
+} from "react";
 
 export type UserState = {
-  user: UserType
-}
+  user: UserType | null;
+};
 
-const UserContext = createContext<{
-  user: UserType;
-  setUserData: (userData: UserType) => void;
-} | undefined>(undefined);
+const UserContext = createContext<
+  | {
+      user: UserType | null;
+      setUserData: (userData: UserType | null) => void;
+    }
+  | undefined
+>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<UserType>({})
+  const [user, setUser] = useState<UserType | null>(null);
 
-  const setUserData = (userData: UserType) => {
+  const setUserData = (userData: UserType | null) => {
     setUser(userData);
-  }
+  };
+
+  useEffect(() => {
+    const getCookie = async () => {
+      const userData = await IsUserLoggedIn();
+      setUser(userData);
+    };
+    getCookie();
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, setUserData }}>
       {children}
     </UserContext.Provider>
   );
-}
+};
 
 export const useUser = () => {
   const context = useContext(UserContext);
   if (!context) {
-    throw new Error('useUser must be used within a UserProvider');
+    throw new Error("useUser must be used within a UserProvider");
   }
   return context;
-}
+};

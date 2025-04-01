@@ -17,18 +17,18 @@ export function AddTask() {
     <Sheet>
       <SheetTrigger asChild>
         <Button>
-            <IoAdd />
-            Create Task
+          <IoAdd />
+          Create Task
         </Button>
       </SheetTrigger>
-      <SheetContent className="border-l-accent">
+      <SheetContent className='border-l-accent'>
         <SheetHeader>
           <SheetTitle>Create Task</SheetTitle>
           <SheetDescription>
-            Make changes to your profile here. Click save when youre done.
+            Make changes to your profile here. Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader>
-            <NewTaskForm />
+        <NewTaskForm />
         {/* <SheetFooter>
           <SheetClose asChild>
             <Button type="submit">Create Task</Button>
@@ -36,5 +36,5 @@ export function AddTask() {
         </SheetFooter> */}
       </SheetContent>
     </Sheet>
-  )
+  );
 }

@@ -1,23 +1,14 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { MoreHorizontal } from "lucide-react"
 import { HiMiniChevronUpDown } from "react-icons/hi2";
-
-
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Task } from "@/types"
 import { Tag } from "@/components/task/task-tag";
 import React from "react";
+import { UpdateTask } from "@/containers/task/UpdateTask";
+import { DeleteTask } from "@/containers/task/DeleteTask";
 
 interface SortColumnProps {
     title: string;
@@ -78,16 +69,6 @@ export const columns: ColumnDef<Task>[] = [
     },
   },
   {
-    accessorKey: "status",
-    header: ({ column }) => {
-        return <SortColumn title={'Status'} sort={() => column.toggleSorting(column.getIsSorted() === "asc")} />
-      },
-    cell: ({ row }) => {
-        const task = row.original;
-        return <Tag tag={task.status} />
-    }
-  },
-  {
     accessorKey: "priority",
     header: ({ column }) => {
         return <SortColumn title={'Priority'} sort={() => column.toggleSorting(column.getIsSorted() === "asc")} />
@@ -105,30 +86,27 @@ export const columns: ColumnDef<Task>[] = [
     
   },
   {
-    id: "actions",
+    accessorKey: "status",
+    header: ({ column }) => {
+        return <SortColumn title={'Status'} sort={() => column.toggleSorting(column.getIsSorted() === "asc")} />
+      },
     cell: ({ row }) => {
-      const payment = row.original
+        const task = row.original;
+        return <Tag tag={task.status} />
+    }
+  },
+ ,
+  {
+    id: "actions",
+    header: 'Actions',
+    cell: ({ row }) => {
+      const task = row.original
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div>
+            <UpdateTask id={task.id} description={task.description} dueDate={task.dueDate} status={task.status} priority={task.priority} category={task.category} />
+            <DeleteTask id={task.id} />
+        </div>
       )
     },
   },

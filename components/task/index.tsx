@@ -14,7 +14,7 @@ import { TaskDueDate } from "./task-date";
 
 
 export function Task({ id, description, category, status, priority, dueDate }: TaskProps) {
-  const router = useRouter();
+      const router = useRouter();
       const [loading, setLoading] = useState<boolean>(false);
       const [statusCheck, setStatusCheck] = useState<string>(status);
       const UpdateItem = (checked: boolean) => {

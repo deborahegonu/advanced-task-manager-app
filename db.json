@@ -32,6 +32,17 @@
       "status": "Completed",
       "createdAt": "2025-03-31T16:43:59.015Z",
       "updatedAt": "2025-04-01T10:28:39.143Z"
+    },
+    {
+      "id": "d6d9563ca7cd608540224ef6216decec73561191",
+      "userId": "923fbe743e27e028dedc53554ce4a6cd060a933d",
+      "description": "Bake a birthday cake for mummy in 65 days",
+      "priority": "medium",
+      "category": "personal",
+      "dueDate": "2025-05-03",
+      "status": "In Progress",
+      "createdAt": "2025-04-01T10:56:17.007Z",
+      "updatedAt": "2025-04-01T10:59:52.444Z"
     }
   ]
 }

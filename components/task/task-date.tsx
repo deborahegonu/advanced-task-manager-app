@@ -10,7 +10,13 @@ const getDueDate = ( date: string) => {
     const today = moment();
     
 
-    if(moment(date).isSameOrAfter(today)) {
+    if(moment(date).isSame(today)) {
+        
+        dueDate = moment(date, 'YYYY.MM.DD').fromNow(true);
+        return dueDate;
+    } 
+
+    if(moment(date).isAfter(today)) {
         
         dueDate = moment(date, 'YYYY.MM.DD').fromNow(true);
         return dueDate;
@@ -25,7 +31,7 @@ const getDueDate = ( date: string) => {
 
 export const TaskDueDate = ({ date }: TaskDueDateProps) => {
     return(
-        <div className="text-xs flex items-center space-x-1 capitalize font-semibold bg-blue-500/10 px-2 py-1.5 text-blue-500 rounded">
+        <div className="text-xs flex items-center space-x-1 font-semibold bg-blue-500/10 px-2 py-1.5 text-blue-500 rounded">
             <IoCalendarClearOutline /> 
             <span>{getDueDate(date)}</span>
         </div>

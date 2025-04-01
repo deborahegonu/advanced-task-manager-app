@@ -5,27 +5,12 @@ import { sidebarMenu } from "@/lib/nav";
 import { SidebarItem } from "@/components/nav/sidebar-item";
 import { MobileMenu } from "@/components/nav/mobile-menu";
 import { MobileMenuItem } from "@/components/nav/mobile-menu-item";
-import { IsUserLoggedIn } from "@/lib/auth";
-import { useEffect } from "react";
-import { useUser } from "@/stores/context";
 
 interface LayoutProps {
     children: React.ReactNode
 }
 
 export default function Layout( { children } : LayoutProps ) {
-    const { setUserData } = useUser();
-    
-    useEffect(() => {
-        const IsLoggedIn = async () => {
-            const checkStatus = await IsUserLoggedIn();
-            if(!checkStatus){
-                window.location.href = "/login";
-            }
-            setUserData(checkStatus);
-        }
-        IsLoggedIn();
-    }, [setUserData])
 
     return(
         <div className="flex min-h-screen">

@@ -2,11 +2,16 @@
 
 import { Button } from "../ui/button"
 import { LogoutUser } from "@/lib/auth"
+import { useUser } from "@/stores/context";
+import { useRouter } from "next/navigation";
 
 export const LogoutButton = () => {
+    const { setUserData } = useUser();
+    const router = useRouter();
     const Logout = () => {
         LogoutUser();
-        window.location.replace("/login");
+        setUserData(null);
+        router.replace("/login")
     }
 
     return (

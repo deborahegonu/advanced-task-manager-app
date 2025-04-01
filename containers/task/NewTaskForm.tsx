@@ -31,10 +31,12 @@ import { createTask } from "@/actions/task"
 import { RiLoader4Fill } from "react-icons/ri";
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
-import { randomBytes } from "crypto"
+import { randomBytes } from "crypto";
+import { useUser } from "@/stores/context";
 
 
 export function NewTaskForm() {
+    const { user } = useUser();
     const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter();
 
@@ -42,6 +44,7 @@ export function NewTaskForm() {
         resolver: zodResolver(TaskFormSchema),
         defaultValues: {
             id: randomBytes(20).toString('hex'),
+            userId: user?.id,
             description: "",
             priority: "",
             category: "",
