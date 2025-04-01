@@ -111,7 +111,7 @@ export function DataTable<TData, TValue>({
       <Table>
         <TableHeader >
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow className="border-b-accent"  key={headerGroup.id}>
+            <TableRow  key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
                   <TableHead key={header.id}>
@@ -127,7 +127,7 @@ export function DataTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
-        <TableBody className="text-stone-300 text-xs font-semibold tracking-wider">
+        <TableBody className="dark:text-stone-300 text-sm tracking-wider">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow

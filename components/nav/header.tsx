@@ -8,6 +8,7 @@ import { LogoutButton } from "../auth/LogoutButton"
 // import { useState } from "react"
 // import { UserType } from "@/types"
 import { useUser } from "@/stores/context";
+import { ModeToggle } from "../theme/toggle-theme"
 
 export const Header = () => {
     const { user } = useUser();
@@ -31,6 +32,7 @@ export const Header = () => {
                             </Link>
                         </>
                     )}
+                    <ModeToggle />
                 </div>
             </nav>
         </header>
