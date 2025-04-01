@@ -7,7 +7,7 @@ import { Middleware } from "../middleware";
 import { cookies } from 'next/headers'
 
 
-const API_URL = 'https://advanced-task-manager-app.vercel.app';
+const API_URL = 'https://atma-backend.onrender.com/api';
 
 export const createTask = async (data: z.infer<typeof TaskFormSchema>) => {
     const cookieStore = await cookies()
