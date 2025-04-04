@@ -1,1 +1,1 @@
-export const JWT_SECRET = "super-secret-jwt";
+export const JWT_SECRET = process.env.JWT_SECRET as string;
